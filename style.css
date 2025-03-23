@@ -1,8 +1,15 @@
 
+/* Estilo general para la página */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+h1 {
+    font-size: 1.5em;
 }
 
 #scanner {
@@ -24,4 +31,18 @@ body {
 
 #productDetails li {
     margin: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    #scanner {
+        height: 200px;
+    }
+
+    #result {
+        font-size: 0.9em;
+    }
 }

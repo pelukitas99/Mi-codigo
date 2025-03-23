@@ -1,5 +1,8 @@
 
-// Initialize QuaggaJS for barcode scanning
+// URL del archivo CSV en Google Sheets (accesible públicamente)
+const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKHNIwPCopFbz6NDE-S2FM6U8NwtY696GXiqc4jv_ibp2eji-AHbXW_uIZJmGL9F5ErxCYqrZnoKgI/pub?output=csv";
+
+// Inicializar Quagga para el escaneo de códigos de barras
 Quagga.init({
     inputStream: {
         name: "Live",
@@ -18,31 +21,35 @@ Quagga.init({
     Quagga.start();
 });
 
-// Event listener for barcode detection
+// Evento que se dispara cuando se detecta un código de barras
 Quagga.onDetected(function(result) {
     const barcode = result.codeResult.code;
     document.getElementById('barcodeResult').textContent = barcode;
     fetchProductData(barcode);
 });
 
-// Function to fetch product details (simulating an API or database search)
+// Función para obtener los datos del producto desde el CSV
 function fetchProductData(barcode) {
-    // Replace this with real API or database call
-    const productData = {
-        '6977042830008': { name: "Coca-cola", description: "Envase de 2L", units: 5, storage: "Almacén A" },
-        '7121710860807': { name: "Cereal Kellogg's", description: "Caja de 600g", units: 1, storage: "Almacén C" },
-        // Add more products here
-    };
+    Papa.parse(csvUrl, {
+        download: true,
+        header: true,
+        dynamicTyping: true,
+        complete: function(results) {
+            // Buscar el producto que coincida con el código de barras
+            const product = results.data.find(row => row['Escanear código de barras'] == barcode);
 
-    const product = productData[barcode];
-    if (product) {
-        document.getElementById('productDetails').innerHTML = `
-            <li><strong>Nombre:</strong> ${product.name}</li>
-            <li><strong>Descripción:</strong> ${product.description}</li>
-            <li><strong>Unidades:</strong> ${product.units}</li>
-            <li><strong>Almacén:</strong> ${product.storage}</li>
-        `;
-    } else {
-        document.getElementById('productDetails').innerHTML = `<li>Producto no encontrado</li>`;
-    }
+            if (product) {
+                // Mostrar los detalles del producto si se encuentra en el CSV
+                document.getElementById('productDetails').innerHTML = `
+                    <li><strong>Nombre:</strong> ${product['Nombre del producto']}</li>
+                    <li><strong>Descripción:</strong> ${product['Descripción del producto']}</li>
+                    <li><strong>Unidades:</strong> ${product['Unidades']}</li>
+                    <li><strong>Almacén:</strong> ${product['Almacén del producto']}</li>
+                `;
+            } else {
+                // Si no se encuentra el producto, mostrar un mensaje
+                document.getElementById('productDetails').innerHTML = `<li>Producto no encontrado</li>`;
+            }
+        }
+    });
 }
