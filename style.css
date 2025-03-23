@@ -1,0 +1,27 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#scanner {
+    margin: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 300px;
+    background: #f4f4f4;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#productDetails {
+    list-style-type: none;
+    padding: 0;
+}
+
+#productDetails li {
+    margin: 10px 0;
+}
