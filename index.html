@@ -11,8 +11,19 @@
     <h1>Escanea el código de barras</h1>
     <p>Usa la cámara para escanear un código de barras</p>
 
-    <!-- Aquí va el escáner de códigos de barras -->
-    <div id="scanner"></div>
+    <div id="scanner"></div> <!-- Aquí se mostrará el escáner -->
+
+    <!-- Mapeo de almacén -->
+    <h2>Mapeo del Almacén</h2>
+    <div class="container">
+        <div class="row">
+            <div class="square yellow">Producto B</div>
+            <div class="square red">Producto C</div>
+        </div>
+        <div class="row">
+            <div class="square green">Producto A (Verde)</div>
+        </div>
+    </div>
 
     <div id="result">
         <h3>Resultado:</h3>
@@ -20,18 +31,6 @@
         <ul id="productDetails">
             <!-- Los detalles del producto se mostrarán aquí -->
         </ul>
-    </div>
-
-    <!-- Mapeo de Almacenes -->
-    <h2>Mapeo del Almacén</h2>
-    <div id="warehouseMapping">
-        <div class="warehouse-row">
-            <div class="warehouse-square warehouse-b" id="warehouseB">Producto B</div>
-            <div class="warehouse-square warehouse-c" id="warehouseC">Producto C</div>
-        </div>
-        <div class="warehouse-row">
-            <div class="warehouse-square warehouse-a" id="warehouseA">Producto A</div>
-        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
