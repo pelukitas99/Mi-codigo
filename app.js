@@ -1,4 +1,3 @@
-
 // URL del archivo CSV en Google Sheets (accesible públicamente)
 const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKHNIwPCopFbz6NDE-S2FM6U8NwtY696GXiqc4jv_ibp2eji-AHbXW_uIZJmGL9F5ErxCYqrZnoKgI/pub?output=csv";
 
@@ -46,10 +45,30 @@ function fetchProductData(barcode) {
                     <li><strong>Unidades:</strong> ${product['Unidades']}</li>
                     <li><strong>Almacén:</strong> ${product['Almacén del producto']}</li>
                 `;
+
+                // Actualizar el mapeo del almacén
+                updateAlmacenMap(product['Almacén del producto']);
             } else {
                 // Si no se encuentra el producto, mostrar un mensaje
                 document.getElementById('productDetails').innerHTML = `<li>Producto no encontrado</li>`;
             }
         }
     });
+}
+
+// Función para actualizar el mapeo de almacén
+function updateAlmacenMap(almacen) {
+    // Reiniciar todos los almacenes a su estado original (desactivado)
+    document.getElementById('almacenA').style.opacity = '0.5';
+    document.getElementById('almacenB').style.opacity = '0.5';
+    document.getElementById('almacenC').style.opacity = '0.5';
+
+    // Activar el almacén correspondiente
+    if (almacen === "Almacén A") {
+        document.getElementById('almacenA').style.opacity = '1';
+    } else if (almacen === "Almacén B") {
+        document.getElementById('almacenB').style.opacity = '1';
+    } else if (almacen === "Almacén C") {
+        document.getElementById('almacenC').style.opacity = '1';
+    }
 }
