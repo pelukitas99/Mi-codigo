@@ -139,4 +139,24 @@ h1 {
 }
 
 /* Estilos cuando se hace clic en los cuadros */
+#productA.clicked {
+    background-color: green;
+}
+
+#productB.clicked {
+    background-color: yellow;
+}
+
+#productC.clicked {
+    background-color: red;
+    color: white;
+}
+
+.cell p {
+    font-size: 1.1em;
+    color: black;
+}
+
+
+/* Estilos cuando se hace clic en los cuadros */
 
