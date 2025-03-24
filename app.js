@@ -58,23 +58,17 @@ function fetchProductData(barcode) {
 
 // Función para actualizar el mapeo de almacén
 function updateAlmacenMap(almacen) {
-    // Reiniciar todos los almacenes a su estado original
-    document.getElementById('productA').style.backgroundColor = 'white';
-    document.getElementById('productB').style.backgroundColor = 'white';
-    document.getElementById('productC').style.backgroundColor = 'white';
-    document.getElementById('productA').style.color = 'black';
-    document.getElementById('productB').style.color = 'black';
-    document.getElementById('productC').style.color = 'black';
-
-    // Cambiar el color según el almacén correspondiente
+    // Reiniciar todos los almacenes a su estado original (desactivado)
+    document.getElementById('productA').classList.remove('clicked');
+    document.getElementById('productB').classList.remove('clicked');
+    document.getElementById('productC').classList.remove('clicked');
+    
+    // Activar el almacén correspondiente
     if (almacen === "Almacén A") {
-        document.getElementById('productA').style.backgroundColor = 'green';
-        document.getElementById('productA').style.color = 'white';
+        document.getElementById('productA').classList.add('clicked');
     } else if (almacen === "Almacén B") {
-        document.getElementById('productB').style.backgroundColor = 'yellow';
-        document.getElementById('productB').style.color = 'black';
+        document.getElementById('productB').classList.add('clicked');
     } else if (almacen === "Almacén C") {
-        document.getElementById('productC').style.backgroundColor = 'red';
-        document.getElementById('productC').style.color = 'white';
+        document.getElementById('productC').classList.add('clicked');
     }
 }
