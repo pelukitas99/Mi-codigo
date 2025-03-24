@@ -1,59 +1,16 @@
-/* Estilo general para la página */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    padding: 20px;
+    margin: 0;
     background: #181818;
     color: white;
-    margin: 0;
-    padding: 20px;
-}
-
-/* Contenedor principal */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-/* Estilo para las filas (con 2 columnas en la primera fila y 1 en la segunda) */
-.row {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-/* Estilo para cada cuadrado (aseguramos que tengan forma cuadrada) */
-.square {
-    width: 150px; /* Ancho ajustado */
-    height: 150px; /* Alto ajustado, para que sea un cuadrado perfecto */
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-/* Colores para cada tipo de producto */
-.yellow {
-    background-color: yellow;
-}
-
-.red {
-    background-color: red;
-}
-
-.green {
-    background-color: green;
-    width: 320px; /* Ancho igual a la suma de los dos anteriores (Producto B + C) */
 }
 
 /* Título */
-h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+h1 {
+    font-size: 1.5em;
 }
 
 /* Ajuste de la cámara */
@@ -126,4 +83,60 @@ h2 {
     }
 }
 
+/* Estilos para el mapeo del almacén */
+#warehouseMapping {
+    margin-top: 30px;
+    padding: 20px;
+    background: #333;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#warehouseMapping h2 {
+    color: white;
+}
+
+/* Estilo para las filas */
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Estilo de las celdas */
+.cell {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Celdas con diferentes colores */
+#productA {
+    background-color: white;
+}
+
+#productB {
+    background-color: white;
+}
+
+#productC {
+    background-color: white;
+}
+
+/* Cuando se hace clic en una celda */
+.cell.clicked {
+    background-color: green;
+    color: white;
+}
+
+/* Estilos cuando se hace clic en los cuadros */
 
