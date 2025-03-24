@@ -1,78 +1,66 @@
-/* Estilo general para la página */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
     margin: 0;
-    background: #f4f4f4;
+    background: #181818;
+    color: white;
 }
 
+/* Título */
 h1 {
     font-size: 1.5em;
 }
 
+/* Ajuste de la cámara */
 #scanner {
-    margin: 10px auto;
-    border: 1px solid #ccc;
     width: 90%;
-    max-width: 260px; /* Ajustado para mejor tamaño en móviles */
-    height: 160px; /* Más pequeño para que no cubra la pantalla */
-    background: #000;
-    border-radius: 10px;
+    max-width: 220px; /* Reducido para móviles */
+    height: 140px; /* Más pequeño */
+    margin: 10px auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: black;
 }
 
+/* Resultado del escaneo */
 #result {
     margin-top: 15px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
+    padding: 12px;
+    background: #222;
+    border-radius: 8px;
+    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Texto del resultado */
 #barcodeResult {
     font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #ffcc00;
 }
 
+/* Lista de detalles */
 #productDetails {
     list-style-type: none;
     padding: 0;
+    text-align: left;
 }
 
 #productDetails li {
     margin: 5px 0;
-    text-align: left;
-    font-size: 1em;
-    background: #f9f9f9;
     padding: 8px;
+    background: #333;
     border-radius: 5px;
 }
 
-/* Ajustes para que la imagen no se sobreponga */
+/* Imagen del producto */
 #productImage {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     display: block;
-    margin: 10px auto;
-}
-
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 1.2em;
-    }
-
-    #scanner {
-        height: 150px;
-        max-width: 240px;
-    }
-
-    #result {
-        font-size: 0.9em;
-        max-width: 300px;
-    }
-}
+    margin:
 
