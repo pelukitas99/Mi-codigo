@@ -13,6 +13,11 @@ h1 {
     font-size: 1.5em;
 }
 
+h2 {
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
 /* Ajuste de la cámara */
 #scanner {
     width: 90%;
@@ -57,52 +62,40 @@ h1 {
     border-radius: 5px;
 }
 
-/* Imagen del producto */
-#productImage {
-    max-width: 90%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border-radius: 5px;
-}
-
-/* Mapeo del almacén */
+/* Mapeo de Almacenes */
 #warehouseMapping {
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-items: center;
 }
 
-/* Cuadros representando los almacenes */
+.warehouse-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .warehouse-square {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 1.2em;
     color: white;
+    border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Colores para los almacenes */
-.warehouse-a {
-    background-color: green;
-}
-
 .warehouse-b {
-    background-color: yellow;
+    background-color: yellow; /* Producto B */
 }
 
 .warehouse-c {
-    background-color: red;
+    background-color: red; /* Producto C */
+}
+
+.warehouse-a {
+    background-color: green; /* Producto A */
 }
 
 /* Ajustes para pantallas pequeñas */
@@ -121,9 +114,10 @@ h1 {
         max-width: 280px;
     }
 
-    #warehouseMapping {
-        grid-template-columns: repeat(2, 1fr); /* En pantallas más pequeñas, dos columnas */
+    .warehouse-square {
+        width: 100px;
+        height: 100px;
+        font-size: 1em;
     }
 }
-
 
