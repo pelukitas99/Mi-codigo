@@ -1,21 +1,59 @@
-/* Estilos generales */
+/* Estilo general para la página */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 20px;
-    margin: 0;
     background: #181818;
     color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo para las filas (con 2 columnas en la primera fila y 1 en la segunda) */
+.row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilo para cada cuadrado */
+.square {
+    width: 150px; /* Ancho ajustado */
+    height: 150px; /* Alto ajustado */
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Colores para cada tipo de producto */
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+    width: 320px; /* Ancho igual a la suma de los dos anteriores */
 }
 
 /* Título */
-h1 {
-    font-size: 1.5em;
-}
-
 h2 {
-    font-size: 1.4em;
-    margin-top: 20px;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 /* Ajuste de la cámara */
@@ -62,40 +100,13 @@ h2 {
     border-radius: 5px;
 }
 
-/* Mapeo de Almacenes */
-#warehouseMapping {
-    margin-top: 30px;
-}
-
-.warehouse-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.warehouse-square {
-    width: 120px;
-    height: 120px;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.warehouse-b {
-    background-color: yellow; /* Producto B */
-}
-
-.warehouse-c {
-    background-color: red; /* Producto C */
-}
-
-.warehouse-a {
-    background-color: green; /* Producto A */
+/* Imagen del producto */
+#productImage {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
 }
 
 /* Ajustes para pantallas pequeñas */
@@ -113,11 +124,6 @@ h2 {
         font-size: 0.9em;
         max-width: 280px;
     }
-
-    .warehouse-square {
-        width: 100px;
-        height: 100px;
-        font-size: 1em;
-    }
 }
+
 
