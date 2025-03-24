@@ -1,4 +1,3 @@
-
 /* Estilo general para la página */
 body {
     font-family: Arial, sans-serif;
@@ -13,15 +12,30 @@ h1 {
 }
 
 #scanner {
-    margin: 20px;
+    margin: 10px auto;
     border: 1px solid #ccc;
-    width: 100%;
-    height: 300px;
-    background: #f4f4f4;
+    width: 90%;
+    max-width: 260px; /* Ajustado para mejor tamaño en móviles */
+    height: 160px; /* Más pequeño para que no cubra la pantalla */
+    background: #000;
+    border-radius: 10px;
 }
 
 #result {
-    margin-top: 20px;
+    margin-top: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#barcodeResult {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #productDetails {
@@ -30,7 +44,20 @@ h1 {
 }
 
 #productDetails li {
-    margin: 10px 0;
+    margin: 5px 0;
+    text-align: left;
+    font-size: 1em;
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Ajustes para que la imagen no se sobreponga */
+#productImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -39,10 +66,13 @@ h1 {
     }
 
     #scanner {
-        height: 200px;
+        height: 150px;
+        max-width: 240px;
     }
 
     #result {
         font-size: 0.9em;
+        max-width: 300px;
     }
 }
+
