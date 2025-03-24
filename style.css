@@ -24,10 +24,10 @@ body {
     margin-bottom: 20px;
 }
 
-/* Estilo para cada cuadrado */
+/* Estilo para cada cuadrado (aseguramos que tengan forma cuadrada) */
 .square {
     width: 150px; /* Ancho ajustado */
-    height: 150px; /* Alto ajustado */
+    height: 150px; /* Alto ajustado, para que sea un cuadrado perfecto */
     margin: 10px;
     display: flex;
     justify-content: center;
@@ -47,7 +47,7 @@ body {
 
 .green {
     background-color: green;
-    width: 320px; /* Ancho igual a la suma de los dos anteriores */
+    width: 320px; /* Ancho igual a la suma de los dos anteriores (Producto B + C) */
 }
 
 /* Título */
