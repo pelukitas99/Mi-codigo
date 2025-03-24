@@ -16,8 +16,8 @@ h1 {
 /* Ajuste de la cámara */
 #scanner {
     width: 90%;
-    max-width: 220px; /* Reducido para móviles */
-    height: 140px; /* Más pequeño */
+    max-width: 220px;
+    height: 140px;
     margin: 10px auto;
     border: 2px solid #ccc;
     border-radius: 8px;
@@ -57,10 +57,31 @@ h1 {
     border-radius: 5px;
 }
 
-/* Imagen del producto */
+/* Imagen del producto ajustada */
 #productImage {
-    max-width: 90%;
-    height: auto;
+    max-width: 100%;
+    max-height: 150px; /* Tamaño máximo para que no sobresalga */
     display: block;
-    margin:
+    margin: 10px auto;
+    border-radius: 5px;
+    object-fit: contain; /* Asegura que la imagen se vea bien sin deformarse */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    #scanner {
+        max-width: 200px;
+        height: 130px;
+    }
+
+    #result {
+        font-size: 0.9em;
+        max-width: 280px;
+    }
+}
+
 
